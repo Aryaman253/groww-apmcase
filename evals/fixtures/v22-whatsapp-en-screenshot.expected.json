@@ -1,0 +1,19 @@
+{
+  "id": "v22-whatsapp-en-screenshot",
+  "kind": "vendor",
+  "sourceType": "image",
+  "file": "v22-whatsapp-en-screenshot.png",
+  "lang": "en",
+  "description": "WhatsApp screenshot, English",
+  "expected": {
+    "accountHolderName": "Kaveri Foods (Demo)",
+    "accountNumber": "778899001122",
+    "ifsc": "CNRB0004455",
+    "bankName": "Canara Bank",
+    "upiId": null,
+    "gstin": "33AAGCK3333N2ZF",
+    "phone": null,
+    "email": null
+  },
+  "groundTruthText": "Kaveri Foods (Demo)\nSir please note our bank details\nA/c Name: Kaveri Foods (Demo)\nA/c No: 7788 9900 1122\nIFSC: CNRB0004455\nCanara Bank, Mysuru\nGSTIN: 33AAGCK3333N2ZF\nOk noted, will pay today"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "v08-upi-phone-only",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v08-upi-phone-only.txt",
+  "lang": "en",
+  "description": "Only Paytm/GPay number + UPI; phone must not become account",
+  "expected": {
+    "accountHolderName": null,
+    "accountNumber": null,
+    "ifsc": null,
+    "bankName": null,
+    "upiId": "demokirana@ybl",
+    "gstin": null,
+    "phone": "9876501234",
+    "email": null
+  }
+}

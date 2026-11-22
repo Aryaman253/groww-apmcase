@@ -1,0 +1,19 @@
+{
+  "id": "v23-whatsapp-hinglish-screenshot",
+  "kind": "vendor",
+  "sourceType": "image",
+  "file": "v23-whatsapp-hinglish-screenshot.png",
+  "lang": "en",
+  "description": "WhatsApp screenshot, Hinglish",
+  "expected": {
+    "accountHolderName": "Sharma General Store (Demo)",
+    "accountNumber": "556677889900",
+    "ifsc": "PUNB0098700",
+    "bankName": "Punjab National Bank",
+    "upiId": null,
+    "gstin": null,
+    "phone": "9811100223",
+    "email": null
+  },
+  "groundTruthText": "Sharma Ji (Demo)\nBhaiya details bhej do\nKhata no: 5566 7788 9900\nIFSC: PUNB0098700\nNaam: Sharma General Store (Demo)\nMob: 9811100223"
+}

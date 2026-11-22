@@ -1,0 +1,18 @@
+{
+  "id": "i13-combined-no-date",
+  "kind": "invoice",
+  "sourceType": "image",
+  "file": "i13-combined-no-date.png",
+  "lang": "en",
+  "description": "PNG, 'Invoice No & Date: TI-00042 dt. 07/01/2025', bank footer, Amount Payable",
+  "expected": {
+    "vendorGstin": "27AALFB8888X1ZT",
+    "vendorName": "Bright Star Enterprises (Demo)",
+    "invoiceNumber": "TI-00042",
+    "invoiceDate": "2025-01-07",
+    "dueDate": null,
+    "totalPaise": 1770000,
+    "creditDays": null
+  },
+  "groundTruthText": "TAX INVOICE\nBright Star Enterprises (Demo)\nUnit 7, Demo Estate, Thane 400601\nGSTIN: 27AALFB8888X1ZT\nInvoice No & Date: TI-00042 dt. 07/01/2025\nBuyer:\nLaxmi Stores (Demo)\nGSTIN: 27AAHFL4444P1ZR\nS.No  Description  HSN  Qty  Rate  Amount\n1  Office Chairs (Demo)  9401  5  3,000.00  15,000.00\nSub Total  15,000.00\nCGST @ 9%  1,350.00\nSGST @ 9%  1,350.00\nAmount Payable  ₹ 17,700.00\nAmount in words: Rupees Seventeen Thousand Seven Hundred Only\nBank: HDFC Bank  A/c No: 50200012345678  IFSC: HDFC0004321\nFor Bright Star Enterprises (Demo)\nAuthorised Signatory"
+}

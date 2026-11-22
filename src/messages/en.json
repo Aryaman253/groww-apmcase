@@ -494,5 +494,199 @@
     "invalidBody": "It may have expired or already been used. Ask the business to send a new link.",
     "rateLimited": "Too many attempts. Please try again in a few minutes.",
     "secure": "Your details go only to this business. TArrow never asks for your bank password or OTP."
+  },
+  "pay": {
+    "title": "Payment runs",
+    "start": "Start payment run",
+    "startBody": "Pick the bills, review one payment per vendor, then pay them all in one go.",
+    "noRuns": "No payment runs yet",
+    "noRunsBody": "Start your first run to pay everything that's due.",
+    "runTitle": "Run #{number}",
+    "steps": {
+      "select": "Select bills",
+      "review": "Review",
+      "confirm": "Confirm",
+      "pay": "Pay",
+      "results": "Confirm results"
+    },
+    "stepOf": "Step {current} of {total}",
+    "saveDraft": "Save draft",
+    "draftSaved": "Draft saved",
+    "discard": "Discard draft",
+    "discardTitle": "Discard this draft?",
+    "discardBody": "No payments were made. Your bills stay as they are.",
+    "select": {
+      "upTo": "Bills due up to",
+      "quick": {
+        "overdue": "Overdue only",
+        "week": "Next 7 days",
+        "fortnight": "Next 15 days",
+        "all": "Everything due"
+      },
+      "selectAll": "Select all",
+      "selectNone": "Clear",
+      "selectedSummary": "{count, plural, one {# bill} other {# bills}} · {amount}",
+      "vendorBills": "{count, plural, one {# bill} other {# bills}}",
+      "empty": "No unpaid bills. Add bills to start a run.",
+      "overdue": "Overdue",
+      "excludedMissing": "Missing bank details — not included"
+    },
+    "review": {
+      "title": "One payment per vendor",
+      "debitAccount": "Pay from",
+      "noDebit": "Add a bank account to pay from",
+      "addDebit": "Add bank account",
+      "amount": "Amount",
+      "editAmount": "Change amount (partial payment)",
+      "partOf": "of {amount} due",
+      "method": "Method",
+      "methods": {
+        "direct": "Direct pay",
+        "bank_file": "Bank file",
+        "upi": "UPI"
+      },
+      "invoices": "Invoices: {list}",
+      "exclude": "Remove from run",
+      "include": "Add back",
+      "removed": "Removed from this run",
+      "footer": "{count, plural, one {# payment} other {# payments}}",
+      "blockedTitle": "Some vendors can't be paid yet",
+      "fix": "Fix",
+      "warnings": {
+        "MISSING_BANK_DETAILS": "Missing bank details — excluded until fixed",
+        "CHANGED_AWAITING_APPROVAL": "Bank details changed — review before paying",
+        "BANK_NOT_APPROVED": "Bank details not approved yet",
+        "VENDOR_NOT_VERIFIED": "Vendor not verified yet",
+        "HOLD_PERIOD": "New details are on a 24-hour hold",
+        "NEW_PAYEE": "New payee in this run. Confirm details; your bank may require adding this payee before paying.",
+        "AMOUNT_UNUSUAL": "Much higher than this vendor's usual amount",
+        "POSSIBLE_DUPLICATE": "Possible duplicate of a recent payment",
+        "INVALID_AMOUNT": "Enter an amount greater than ₹0",
+        "AMOUNT_EXCEEDS_TOTAL": "Can't pay more than what's due"
+      }
+    },
+    "confirm": {
+      "title": "Confirm payment run",
+      "total": "Total",
+      "inWords": "In words",
+      "count": "{count, plural, one {# payment} other {# payments}}",
+      "from": "From {account}",
+      "byMethod": "{method}: {count} · {amount}",
+      "sheetTitle": "Confirm {amount}?",
+      "sheetBody": "You're approving {count, plural, one {# payment} other {# payments}} from {account}. Nothing is sent until you pay on the next screen.",
+      "hold": "Press and hold to confirm",
+      "holding": "Keep holding…",
+      "confirmed": "Run confirmed",
+      "errors": {
+        "BLOCKED": "Some vendors are blocked: {vendors}. Go back and review them.",
+        "TOTAL_CHANGED": "Bills changed since you reviewed. Please review again.",
+        "EMPTY": "There's nothing to pay in this run.",
+        "NO_DEBIT_ACCOUNT": "Choose the account to pay from.",
+        "NOT_DRAFT": "This run is already confirmed."
+      }
+    },
+    "payStep": {
+      "title": "Pay",
+      "intro": "Pay using your bank or UPI app. TArrow never moves money itself.",
+      "bankFile": {
+        "title": "Bank bulk file",
+        "body": "{count, plural, one {# payment} other {# payments}} · {amount}",
+        "download": "Download {name} file",
+        "checklist": [
+          "Log in to your bank's net banking (corporate/business login).",
+          "Open Bulk payments / File upload.",
+          "Upload the downloaded file and check the total.",
+          "Approve with your OTP — only once for the whole file.",
+          "Come back here and upload the status report or enter UTRs."
+        ],
+        "markSent": "I've uploaded it — mark as sent",
+        "errorsTitle": "Fix these before downloading",
+        "placeholder": "This template is a placeholder. Check it matches your bank's latest bulk-upload format."
+      },
+      "upi": {
+        "title": "UPI",
+        "body": "{count, plural, one {# payment} other {# payments}} · {amount}",
+        "pay": "Pay",
+        "copy": "Copy details",
+        "copied": "UPI details copied",
+        "scan": "Scan with any UPI app",
+        "markSent": "Mark sent"
+      },
+      "direct": {
+        "title": "Direct pay",
+        "testBadge": "Test mode",
+        "body": "Pays from your connected payout account. Test mode — no real money moves.",
+        "payN": "Pay {amount} to {count, plural, one {# vendor} other {# vendors}}",
+        "sheetTitle": "Send {amount} now?",
+        "sheetBody": "{count, plural, one {# payout} other {# payouts}} will be created in your {provider} account (test mode). Each payment is sent once, even if you tap twice.",
+        "sending": "Sending…",
+        "sent": "Payouts created",
+        "status": {
+          "pending": "Waiting",
+          "sent": "Sent",
+          "processing": "Processing",
+          "paid": "Paid",
+          "failed": "Failed",
+          "reversed": "Reversed",
+          "skipped": "Removed"
+        },
+        "refresh": "Refresh status",
+        "insufficient": "Not enough balance in your payout account ({balance}). Add funds and try again.",
+        "nameMismatch": "Name at bank doesn't match: {name}",
+        "override": "Pay anyway",
+        "verify": "Verify account"
+      },
+      "sentBadge": "Sent",
+      "next": "Next: confirm results"
+    },
+    "results": {
+      "title": "Confirm results",
+      "intro": "Upload the bank's status report, or enter the UTR for each payment.",
+      "uploadStatus": "Upload status file",
+      "mapTitle": "Match the status file columns",
+      "fields": {
+        "accountNumber": "Account number",
+        "amount": "Amount",
+        "reference": "Reference / narration",
+        "utr": "UTR",
+        "status": "Status",
+        "reason": "Failure reason"
+      },
+      "matched": "{count, plural, one {# payment matched} other {# payments matched}}",
+      "unmatchedRows": "{count, plural, one {# row didn't match} other {# rows didn't match}}",
+      "ambiguous": "{count, plural, one {# row matched more than one payment} other {# rows matched more than one payment}} — enter those by hand",
+      "applyN": "Apply {count, plural, one {# result} other {# results}}",
+      "applied": "{count, plural, one {# result applied} other {# results applied}}",
+      "needUtr": "Success without a UTR — enter it by hand",
+      "utr": "UTR / reference",
+      "saveUtr": "Mark paid",
+      "failed": "Failed",
+      "failReason": "Reason",
+      "markFailed": "Mark failed",
+      "remove": "Remove from run",
+      "paidWith": "Paid · UTR {utr}",
+      "failedWith": "Failed: {reason}",
+      "billsBack": "Bills returned to Due",
+      "completeTitle": "Run completed",
+      "partlyTitle": "Run partly failed",
+      "completeBody": "All payments are resolved. Bills are marked paid.",
+      "partlyBody": "Some payments failed. Their bills are back in Due with the reason.",
+      "notify": "Notify vendors",
+      "notifyOne": "WhatsApp",
+      "notifyMessage": "Payment of {amount} sent for invoice(s) {invoices}. UTR: {utr}. — {business}",
+      "export": "Export paid list (Excel)",
+      "print": "Printable summary",
+      "invalidUtr": "Enter a valid UTR (6–40 letters or numbers)."
+    },
+    "print": {
+      "title": "Payment run summary",
+      "generated": "Generated {date}",
+      "signature": "Checked by",
+      "vendor": "Vendor",
+      "account": "Account / UPI",
+      "method": "Method",
+      "utr": "UTR",
+      "status": "Status"
+    }
   }
 }

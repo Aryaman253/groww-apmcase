@@ -1,0 +1,19 @@
+{
+  "id": "v24-hindi-screenshot",
+  "kind": "vendor",
+  "sourceType": "image",
+  "file": "v24-hindi-screenshot.png",
+  "lang": "hi",
+  "description": "WhatsApp screenshot, Hindi (Devanagari) labels",
+  "expected": {
+    "accountHolderName": "अन्नपूर्णा किराना (डेमो)",
+    "accountNumber": "112233445566",
+    "ifsc": "BARB0VJDEMO",
+    "bankName": "Bank of Baroda",
+    "upiId": null,
+    "gstin": null,
+    "phone": "9876512340",
+    "email": null
+  },
+  "groundTruthText": "अन्नपूर्णा किराना (डेमो)\nखाताधारक का नाम: अन्नपूर्णा किराना (डेमो)\nखाता संख्या: 112233445566\nआईएफएससी: BARB0VJDEMO\nबैंक: बैंक ऑफ बड़ौदा\nफोन: 9876512340"
+}

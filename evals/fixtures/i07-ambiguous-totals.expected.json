@@ -1,0 +1,24 @@
+{
+  "id": "i07-ambiguous-totals",
+  "kind": "invoice",
+  "sourceType": "pdf",
+  "file": "i07-ambiguous-totals.pdf",
+  "lang": "en",
+  "description": "PDF, two section totals and no grand total → total must be null",
+  "expected": {
+    "vendorGstin": "24AAIFP5555R1ZI",
+    "vendorName": "Patel Brothers (Demo)",
+    "invoiceNumber": "7781",
+    "invoiceDate": "2025-01-08",
+    "dueDate": null,
+    "totalPaise": null,
+    "creditDays": null
+  },
+  "candidates": {
+    "totalPaise": [
+      500000,
+      750000
+    ]
+  },
+  "groundTruthText": "BILL\nPatel Brothers (Demo)\nStation Road, Vadodara 390001\nGSTIN: 24AAIFP5555R1ZI\nBill No: 7781\nDate: 08/01/2025\nS.No  Description  HSN  Qty  Rate  Amount\n1  Tools Kit (Demo)  8205  10  500.00  5,000.00\nTotal (Goods)  5,000.00\nTotal (Services)  7,500.00\nFor Patel Brothers (Demo)\nAuthorised Signatory"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "v12-aadhaar-distractor",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v12-aadhaar-distractor.txt",
+  "lang": "en",
+  "description": "Aadhaar-formatted 12 digits must not be the account",
+  "expected": {
+    "accountHolderName": "Kiran Demo",
+    "accountNumber": "66778899001122",
+    "ifsc": "BARB0DEMO12",
+    "bankName": "Bank of Baroda",
+    "upiId": null,
+    "gstin": null,
+    "phone": null,
+    "email": null
+  }
+}

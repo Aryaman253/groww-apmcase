@@ -1,0 +1,18 @@
+{
+  "id": "i15-receipt-narrow",
+  "kind": "invoice",
+  "sourceType": "image",
+  "file": "i15-receipt-narrow.png",
+  "lang": "en",
+  "description": "PNG, narrow thermal-receipt style, monospace, 'NET AMOUNT', 'Dt: 18/03/25'",
+  "expected": {
+    "vendorGstin": "07ABJPS6666T1ZD",
+    "vendorName": "Sharma General Store (Demo)",
+    "invoiceNumber": "3345",
+    "invoiceDate": "2025-03-18",
+    "dueDate": null,
+    "totalPaise": 125000,
+    "creditDays": null
+  },
+  "groundTruthText": "SHARMA GENERAL STORE (DEMO)\nKarol Bagh, New Delhi 110005\nGSTIN: 07ABJPS6666T1ZD\nCASH MEMO\nBill No: 3345  Dt: 18/03/25\nGrocery items (Demo)\n  25 x 50.00  1,250.00\nNET AMOUNT  1,250.00\nThank you! Visit again"
+}

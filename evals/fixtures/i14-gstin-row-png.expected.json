@@ -1,0 +1,18 @@
+{
+  "id": "i14-gstin-row-png",
+  "kind": "invoice",
+  "sourceType": "image",
+  "file": "i14-gstin-row-png.png",
+  "lang": "en",
+  "description": "PNG, supplier/recipient GSTIN on one row, 'Dated: 28.02.2025'",
+  "expected": {
+    "vendorGstin": "33AAMFL9999Z1ZF",
+    "vendorName": "Lakshmi Agencies (Demo)",
+    "invoiceNumber": "LA/24-25/310",
+    "invoiceDate": "2025-02-28",
+    "dueDate": "2025-03-30",
+    "totalPaise": 4720000,
+    "creditDays": null
+  },
+  "groundTruthText": "TAX INVOICE\nLakshmi Agencies (Demo)\n14 Anna Salai, Chennai 600002\nInvoice No: LA/24-25/310\nDated: 28.02.2025\nDue Date: 30.03.2025\nBill To:\nTArrow Demo Mart\nSupplier GSTIN: 33AAMFL9999Z1ZF  Recipient GSTIN: 27AAACT0000A1ZF\nS.No  Description  HSN  Qty  Rate  Amount\n1  Steel Utensils Set (Demo)  7323  50  800.00  40,000.00\nSub Total  40,000.00\nIGST @ 18%  7,200.00\nGrand Total  ₹ 47,200.00\nFor Lakshmi Agencies (Demo)\nAuthorised Signatory"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "v18-customer-id-micr",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v18-customer-id-micr.txt",
+  "lang": "en",
+  "description": "Customer ID (9 digits) and MICR distractors",
+  "expected": {
+    "accountHolderName": "Ganesh Electricals (Demo)",
+    "accountNumber": "20123456789",
+    "ifsc": "SBIN0001234",
+    "bankName": "State Bank of India",
+    "upiId": null,
+    "gstin": null,
+    "phone": null,
+    "email": null
+  }
+}

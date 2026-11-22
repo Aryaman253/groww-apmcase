@@ -1,0 +1,24 @@
+{
+  "id": "v19-two-upi",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v19-two-upi.txt",
+  "lang": "en",
+  "description": "Two UPI ids → ambiguous; email must not be read as UPI",
+  "expected": {
+    "accountHolderName": null,
+    "accountNumber": null,
+    "ifsc": null,
+    "bankName": null,
+    "upiId": null,
+    "gstin": null,
+    "phone": null,
+    "email": "shreeganesh.demo@gmail.com"
+  },
+  "candidates": {
+    "upiId": [
+      "demo1@okaxis",
+      "demo2@ybl"
+    ]
+  }
+}

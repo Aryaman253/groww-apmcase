@@ -1,0 +1,18 @@
+{
+  "id": "v16-devanagari-digits",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v16-devanagari-digits.txt",
+  "lang": "hi",
+  "description": "Devanagari digits in account and phone",
+  "expected": {
+    "accountHolderName": "राजेश कुमार (डेमो)",
+    "accountNumber": "345678901234",
+    "ifsc": "BKID0004567",
+    "bankName": "Bank of India",
+    "upiId": null,
+    "gstin": null,
+    "phone": "9876543210",
+    "email": null
+  }
+}

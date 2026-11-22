@@ -1,0 +1,18 @@
+{
+  "id": "v03-email-signature",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v03-email-signature.txt",
+  "lang": "en",
+  "description": "Email with signature block, +91 phone, email, GSTIN",
+  "expected": {
+    "accountHolderName": "Bluewave Textiles (Demo)",
+    "accountNumber": "000405001234",
+    "ifsc": "ICIC0000004",
+    "bankName": "ICICI Bank",
+    "upiId": null,
+    "gstin": "24AACCB5678R1Z0",
+    "phone": "9820011223",
+    "email": "anil.mehta@bluewave-demo.in"
+  }
+}

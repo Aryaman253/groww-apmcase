@@ -1,0 +1,18 @@
+{
+  "id": "i11-ordinal-dates",
+  "kind": "invoice",
+  "sourceType": "image",
+  "file": "i11-ordinal-dates.png",
+  "lang": "en",
+  "description": "PNG, '1st February 2025', 'Balance Due', 'Payment due by 3rd March 2025'",
+  "expected": {
+    "vendorGstin": "27AANFG1212B1ZZ",
+    "vendorName": "Ganesh Electricals (Demo)",
+    "invoiceNumber": "GE/101",
+    "invoiceDate": "2025-02-01",
+    "dueDate": "2025-03-03",
+    "totalPaise": 1416000,
+    "creditDays": null
+  },
+  "groundTruthText": "INVOICE\nGanesh Electricals (Demo)\n22 Lamington Road, Mumbai 400007\nGSTIN: 27AANFG1212B1ZZ\nInvoice No: GE/101\nDate: 1st February 2025\nPayment due by: 3rd March 2025\nCustomer:\nOm Medical Store (Demo)\nGSTIN: 27AAEPO2222L1ZQ\nS.No  Description  HSN  Qty  Rate  Amount\n1  LED Bulb 9W (Demo)  8539  120  100.00  12,000.00\nSub Total  12,000.00\nCGST @ 9%  1,080.00\nSGST @ 9%  1,080.00\nBalance Due  ₹ 14,160.00\nFor Ganesh Electricals (Demo)\nAuthorised Signatory"
+}

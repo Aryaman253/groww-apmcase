@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { RunStatusBadge } from "@/components/app/run-status";
 import { Money } from "@/components/app/money";
 import { Tour } from "./tour";
+import { StartRunButton } from "../pay/start-run-button";
 
 export const metadata = { title: "Home" };
 
@@ -41,11 +42,17 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
             <p className="tabular mt-1 text-4xl font-semibold tracking-tight">{formatInrRounded(d.dueTotal)}</p>
             <p className="mt-1 text-text-secondary">{t("dueSummary", { amount: formatInr(d.dueTotal), count: d.dueVendors })}</p>
             {d.overdueTotal > 0 ? <p className="mt-1 text-sm text-danger">{t("overdueIncluded", { amount: formatInr(d.overdueTotal) })}</p> : null}
-            <Button asChild size="lg" className="mt-5 h-12 w-full text-base" data-tour="start-run">
-              <Link href={d.draft ? `/pay/${d.draft.id}` : "/pay/new"} data-testid="start-run">
-                {d.draft ? t("continueDraft") : t("startRun")}
-              </Link>
-            </Button>
+            <div className="mt-5" data-tour="start-run">
+              {d.draft ? (
+                <Button asChild size="lg" className="h-12 w-full text-base">
+                  <Link href={`/pay/${d.draft.id}`} data-testid="start-run">
+                    {t("continueDraft")}
+                  </Link>
+                </Button>
+              ) : (
+                <StartRunButton label={t("startRun")} />
+              )}
+            </div>
           </>
         ) : (
           <>

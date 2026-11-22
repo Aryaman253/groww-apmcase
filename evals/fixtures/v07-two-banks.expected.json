@@ -1,0 +1,28 @@
+{
+  "id": "v07-two-banks",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v07-two-banks.txt",
+  "lang": "en",
+  "description": "Two labelled accounts at two banks → account/IFSC/bank ambiguous",
+  "expected": {
+    "accountHolderName": "Patel Brothers (Demo)",
+    "accountNumber": null,
+    "ifsc": null,
+    "bankName": null,
+    "upiId": null,
+    "gstin": null,
+    "phone": null,
+    "email": null
+  },
+  "candidates": {
+    "accountNumber": [
+      "123400005678",
+      "300012345678"
+    ],
+    "ifsc": [
+      "HDFC0000123",
+      "SBIN0011223"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "i01-tally-style",
+  "kind": "invoice",
+  "sourceType": "pdf",
+  "file": "i01-tally-style.pdf",
+  "lang": "en",
+  "description": "PDF, Tally-like: seller header, Bill To with buyer GSTIN, CGST/SGST, words, due date",
+  "expected": {
+    "vendorGstin": "27AAKFS1234Q1ZP",
+    "vendorName": "Sunrise Pharma Distributors (Demo)",
+    "invoiceNumber": "SPD/24-25/0118",
+    "invoiceDate": "2025-03-12",
+    "dueDate": "2025-04-11",
+    "totalPaise": 1180000,
+    "creditDays": null
+  },
+  "groundTruthText": "TAX INVOICE\nSunrise Pharma Distributors (Demo)\nShop 4, Demo Market, Andheri East, Mumbai 400069\nGSTIN: 27AAKFS1234Q1ZP  Ph: 9876543210\nBill To:  Invoice No: SPD/24-25/0118\nOm Medical Store (Demo)  Date: 12/03/2025\nGSTIN: 27AAEPO2222L1ZQ  Due Date: 11/04/2025\nS.No  Description  HSN  Qty  Rate  Amount\n1  Paracetamol 500mg (Demo) x10  3004  100  50.00  5,000.00\n2  ORS Sachets (Demo)  3004  200  25.00  5,000.00\nSub Total  10,000.00\nCGST @ 9%  900.00\nSGST @ 9%  900.00\nGrand Total  ₹ 11,800.00\nAmount in words: Rupees Eleven Thousand Eight Hundred Only\nFor Sunrise Pharma Distributors (Demo)\nAuthorised Signatory"
+}

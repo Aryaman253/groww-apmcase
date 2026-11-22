@@ -1,0 +1,18 @@
+{
+  "id": "i04-column-header",
+  "kind": "invoice",
+  "sourceType": "pdf",
+  "file": "i04-column-header.pdf",
+  "lang": "en",
+  "description": "PDF, meta in column-header layout (labels row, values row below)",
+  "expected": {
+    "vendorGstin": "29AAJFD4321M1Z7",
+    "vendorName": "Delta Hardware (Demo)",
+    "invoiceNumber": "GST/0425",
+    "invoiceDate": "2025-04-02",
+    "dueDate": "2025-05-02",
+    "totalPaise": 5900000,
+    "creditDays": null
+  },
+  "groundTruthText": "TAX INVOICE\nDelta Hardware (Demo)\n45 Industrial Area, Bengaluru 560058\nGSTIN: 29AAJFD4321M1Z7\nInvoice No.  Invoice Date  Due Date\nGST/0425  02-Apr-2025  02-May-2025\nBilled To:\nLaxmi Stores (Demo)\nGSTIN: 27AAHFL4444P1ZR\nS.No  Description  HSN  Qty  Rate  Amount\n1  PVC Pipe 2in (Demo)  3917  100  300.00  30,000.00\n2  Ball Valve (Demo)  8481  40  500.00  20,000.00\nSub Total  50,000.00\nIGST @ 18%  9,000.00\nTotal Amount  ₹ 59,000.00\nAmount in words: Rupees Fifty Nine Thousand Only\nFor Delta Hardware (Demo)\nAuthorised Signatory"
+}

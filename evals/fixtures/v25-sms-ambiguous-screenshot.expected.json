@@ -1,0 +1,25 @@
+{
+  "id": "v25-sms-ambiguous-screenshot",
+  "kind": "vendor",
+  "sourceType": "image",
+  "file": "v25-sms-ambiguous-screenshot.png",
+  "lang": "en",
+  "description": "SMS screenshot with two unlabelled account numbers → null",
+  "expected": {
+    "accountHolderName": null,
+    "accountNumber": null,
+    "ifsc": "IOBA0001234",
+    "bankName": "Indian Overseas Bank",
+    "upiId": null,
+    "gstin": null,
+    "phone": null,
+    "email": null
+  },
+  "candidates": {
+    "accountNumber": [
+      "223344556677",
+      "334455667788"
+    ]
+  },
+  "groundTruthText": "VK-DEMO\nPayment karo 223344556677\nya 334455667788 me, dono\nchalega. IFSC IOBA0001234"
+}

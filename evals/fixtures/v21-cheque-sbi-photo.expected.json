@@ -1,0 +1,19 @@
+{
+  "id": "v21-cheque-sbi-photo",
+  "kind": "vendor",
+  "sourceType": "image",
+  "file": "v21-cheque-sbi-photo.jpg",
+  "lang": "en",
+  "description": "Cancelled cheque (SBI), photographed: slight rotation, noise, JPEG",
+  "expected": {
+    "accountHolderName": "MAA DURGA TRADERS (DEMO)",
+    "accountNumber": "301234567890",
+    "ifsc": "SBIN0012345",
+    "bankName": "State Bank of India",
+    "upiId": null,
+    "gstin": null,
+    "phone": null,
+    "email": null
+  },
+  "groundTruthText": "STATE BANK OF INDIA\nDate\nDemo Bazar Branch, Jaipur 302001\nIFS Code: SBIN0012345\nPay  or Bearer\nRupees  ₹\nA/c No. 3012 3456 7890\nFor MAA DURGA TRADERS (DEMO)\nProprietor\n\"000456\"  302002015:  012345\"  10"
+}

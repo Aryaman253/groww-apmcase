@@ -1,0 +1,5 @@
+Customer ID: 123456789
+A/c Number: 20123456789
+MICR: 400240015
+IFSC: SBIN0001234
+Account Name: Ganesh Electricals (Demo)

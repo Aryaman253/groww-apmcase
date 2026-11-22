@@ -1,0 +1,18 @@
+{
+  "id": "v05-hindi",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v05-hindi.txt",
+  "lang": "hi",
+  "description": "Hindi labels: खाता धारक / खाता संख्या / आईएफएससी / बैंक / मोबाइल",
+  "expected": {
+    "accountHolderName": "श्याम ट्रेडर्स (डेमो)",
+    "accountNumber": "000123456789012",
+    "ifsc": "PUNB0123400",
+    "bankName": "Punjab National Bank",
+    "upiId": null,
+    "gstin": null,
+    "phone": "9988776655",
+    "email": null
+  }
+}

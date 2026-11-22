@@ -1,0 +1,18 @@
+{
+  "id": "v02-sms-compact",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v02-sms-compact.txt",
+  "lang": "en",
+  "description": "SMS, single line, 'Acc no:-' and hyphen separators",
+  "expected": {
+    "accountHolderName": "Ravi Kumar Traders (Demo)",
+    "accountNumber": "112233445566",
+    "ifsc": "SBIN0001234",
+    "bankName": "State Bank of India",
+    "upiId": null,
+    "gstin": null,
+    "phone": "9876543210",
+    "email": null
+  }
+}

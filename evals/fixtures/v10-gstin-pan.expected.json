@@ -1,0 +1,18 @@
+{
+  "id": "v10-gstin-pan",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v10-gstin-pan.txt",
+  "lang": "en",
+  "description": "Firm name, GSTIN, PAN distractor, 'Current A/c'",
+  "expected": {
+    "accountHolderName": "Delta Hardware (Demo)",
+    "accountNumber": "0011223344556",
+    "ifsc": "YESB0000456",
+    "bankName": "Yes Bank",
+    "upiId": null,
+    "gstin": "29AAJFD4321M1Z7",
+    "phone": null,
+    "email": null
+  }
+}

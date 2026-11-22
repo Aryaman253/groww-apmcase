@@ -1,0 +1,18 @@
+{
+  "id": "v04-hinglish-whatsapp",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v04-hinglish-whatsapp.txt",
+  "lang": "en",
+  "description": "Hinglish WhatsApp: Khata no / Naam / Gpay",
+  "expected": {
+    "accountHolderName": "Gupta Kirana Store (Demo)",
+    "accountNumber": "345678901234",
+    "ifsc": "UTIB0000123",
+    "bankName": "Axis Bank",
+    "upiId": null,
+    "gstin": null,
+    "phone": "9811122233",
+    "email": null
+  }
+}

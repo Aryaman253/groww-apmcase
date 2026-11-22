@@ -1,0 +1,18 @@
+{
+  "id": "i02-retail-net30",
+  "kind": "invoice",
+  "sourceType": "pdf",
+  "file": "i02-retail-net30.pdf",
+  "lang": "en",
+  "description": "PDF, 'Invoice #', '5 Mar 2025', IGST, Net 30 terms, no printed due date",
+  "expected": {
+    "vendorGstin": "24AACCB5678R1Z0",
+    "vendorName": "Bluewave Textiles (Demo)",
+    "invoiceNumber": "1187",
+    "invoiceDate": "2025-03-05",
+    "dueDate": null,
+    "totalPaise": 472000,
+    "creditDays": 30
+  },
+  "groundTruthText": "INVOICE\nBluewave Textiles (Demo)\n12 Ring Road, Surat, Gujarat 395002\nGSTIN: 24AACCB5678R1Z0\nInvoice #: 1187\nDate: 5 Mar 2025\nBill To:\nWalk-in Customer (Demo)\nS.No  Description  HSN  Qty  Rate  Amount\n1  Cotton Fabric (Demo) - mtr  5208  40  100.00  4,000.00\nSub Total  4,000.00\nIGST @ 18%  720.00\nTotal Amount  ₹ 4,720.00\nPayment terms: Net 30 days\nFor Bluewave Textiles (Demo)\nAuthorised Signatory"
+}

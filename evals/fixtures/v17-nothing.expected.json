@@ -1,0 +1,18 @@
+{
+  "id": "v17-nothing",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v17-nothing.txt",
+  "lang": "en",
+  "description": "No details at all → everything null",
+  "expected": {
+    "accountHolderName": null,
+    "accountNumber": null,
+    "ifsc": null,
+    "bankName": null,
+    "upiId": null,
+    "gstin": null,
+    "phone": null,
+    "email": null
+  }
+}

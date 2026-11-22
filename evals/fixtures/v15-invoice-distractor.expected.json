@@ -1,0 +1,18 @@
+{
+  "id": "v15-invoice-distractor",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v15-invoice-distractor.txt",
+  "lang": "en",
+  "description": "Bill number and amount in the same message must not become the account",
+  "expected": {
+    "accountHolderName": null,
+    "accountNumber": "445566778899",
+    "ifsc": "IDIB000K123",
+    "bankName": "Indian Bank",
+    "upiId": null,
+    "gstin": null,
+    "phone": null,
+    "email": null
+  }
+}

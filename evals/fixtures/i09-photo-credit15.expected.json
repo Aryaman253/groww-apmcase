@@ -1,0 +1,18 @@
+{
+  "id": "i09-photo-credit15",
+  "kind": "invoice",
+  "sourceType": "image",
+  "file": "i09-photo-credit15.jpg",
+  "lang": "en",
+  "description": "JPEG photo-like (rotated, noisy, blurred); 'Credit: 15 days'",
+  "expected": {
+    "vendorGstin": "24AAIFP5555R1ZI",
+    "vendorName": "Patel Brothers (Demo)",
+    "invoiceNumber": "PB/0907",
+    "invoiceDate": "2025-03-09",
+    "dueDate": null,
+    "totalPaise": 826000,
+    "creditDays": 15
+  },
+  "groundTruthText": "TAX INVOICE\nPatel Brothers (Demo)\nStation Road, Vadodara 390001\nGSTIN: 24AAIFP5555R1ZI\nInvoice No: PB/0907\nDate: 09-Mar-2025\nBill To:\nLaxmi Stores (Demo)\nS.No  Description  HSN  Qty  Rate  Amount\n1  Cleaning Supplies (Demo)  3402  70  100.00  7,000.00\nSub Total  7,000.00\nIGST @ 18%  1,260.00\nGrand Total  ₹ 8,260.00\nCredit: 15 days\nFor Patel Brothers (Demo)\nAuthorised Signatory"
+}

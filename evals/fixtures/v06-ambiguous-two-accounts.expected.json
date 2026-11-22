@@ -1,0 +1,24 @@
+{
+  "id": "v06-ambiguous-two-accounts",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v06-ambiguous-two-accounts.txt",
+  "lang": "en",
+  "description": "Two account-like numbers, no keyword → must be null with candidates",
+  "expected": {
+    "accountHolderName": null,
+    "accountNumber": null,
+    "ifsc": "KKBK0000123",
+    "bankName": "Kotak Mahindra Bank",
+    "upiId": null,
+    "gstin": null,
+    "phone": null,
+    "email": null
+  },
+  "candidates": {
+    "accountNumber": [
+      "112200334455",
+      "998877001122"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "i06-iso-dates-lakh",
+  "kind": "invoice",
+  "sourceType": "pdf",
+  "file": "i06-iso-dates-lakh.pdf",
+  "lang": "en",
+  "description": "PDF, ISO dates, 'Total Payable' in lakhs with paise",
+  "expected": {
+    "vendorGstin": "09AAKFA7777V1Z3",
+    "vendorName": "Annapurna Agro Foods (Demo)",
+    "invoiceNumber": "INV-2025-0042",
+    "invoiceDate": "2025-03-31",
+    "dueDate": "2025-04-30",
+    "totalPaise": 9419200,
+    "creditDays": null
+  },
+  "groundTruthText": "INVOICE\nAnnapurna Agro Foods (Demo)\nPlot 9, Agro Estate, Nashik 422001\nGSTIN: 09AAKFA7777V1Z3\nBill To:  Invoice No: INV-2025-0042\nOm Medical Store (Demo)  Invoice Date: 2025-03-31\nGSTIN: 27AAEPO2222L1ZQ  Due Date: 2025-04-30\nS.No  Description  HSN  Qty  Rate  Amount\n1  Fertilizer Bag (Demo)  3105  90  1,046.00  94,140.00\n2  Seeds Pack (Demo)  1209  1  52.00  52.00\nTotal Payable  ₹ 94,192.00\nAmount in words: Rupees Ninety Four Thousand One Hundred Ninety Two Only\nFor Annapurna Agro Foods (Demo)\nAuthorised Signatory"
+}

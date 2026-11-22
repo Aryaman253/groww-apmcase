@@ -1,0 +1,18 @@
+{
+  "id": "v09-no-keywords",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v09-no-keywords.txt",
+  "lang": "en",
+  "description": "No keywords at all: name, phone, account, IFSC on separate lines",
+  "expected": {
+    "accountHolderName": "Ramesh Demo Traders",
+    "accountNumber": "123456789012",
+    "ifsc": "ICIC0001234",
+    "bankName": "ICICI Bank",
+    "upiId": null,
+    "gstin": null,
+    "phone": "9876543210",
+    "email": null
+  }
+}

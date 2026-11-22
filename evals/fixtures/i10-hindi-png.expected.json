@@ -1,0 +1,18 @@
+{
+  "id": "i10-hindi-png",
+  "kind": "invoice",
+  "sourceType": "image",
+  "file": "i10-hindi-png.png",
+  "lang": "hi",
+  "description": "PNG, Hindi invoice (Devanagari OCR)",
+  "expected": {
+    "vendorGstin": "09AAKFA7777V1Z3",
+    "vendorName": "अन्नपूर्णा किराना (डेमो)",
+    "invoiceNumber": "AK-221",
+    "invoiceDate": "2025-02-04",
+    "dueDate": "2025-03-06",
+    "totalPaise": 944000,
+    "creditDays": null
+  },
+  "groundTruthText": "कर बीजक\nअन्नपूर्णा किराना (डेमो)\nचौक बाज़ार, कानपुर 208001\nजीएसटी नंबर: 09AAKFA7777V1Z3\nबिल नंबर: AK-221\nदिनांक: 04/02/2025\nदेय तिथि: 06/03/2025\nक्र.  विवरण  HSN  मात्रा  दर  राशि\n1  आटा (डेमो) 10 किग्रा  1101  20  400.00  8,000.00\nकर योग्य राशि  8,000.00\nCGST @ 9%  720.00\nSGST @ 9%  720.00\nकुल राशि  9,440.00\nकृते अन्नपूर्णा किराना (डेमो)\nहस्ताक्षर (प्राधिकृत)"
+}

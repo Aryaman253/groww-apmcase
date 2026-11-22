@@ -1,0 +1,18 @@
+{
+  "id": "i05-supplier-recipient-row",
+  "kind": "invoice",
+  "sourceType": "pdf",
+  "file": "i05-supplier-recipient-row.pdf",
+  "lang": "en",
+  "description": "PDF, 'Supplier GSTIN … Recipient GSTIN …' on one row; lakh-grouped total",
+  "expected": {
+    "vendorGstin": "33AAGCK3333N2ZF",
+    "vendorName": "Kaveri Foods (Demo)",
+    "invoiceNumber": "KF/2025/077",
+    "invoiceDate": "2025-03-31",
+    "dueDate": null,
+    "totalPaise": 23600000,
+    "creditDays": null
+  },
+  "groundTruthText": "TAX INVOICE\nKaveri Foods (Demo)\n8 Mill Road, Coimbatore 641001\nInvoice No: KF/2025/077\nInvoice Date: 31-03-2025\nShip To:\nTArrow Demo Mart\nSupplier GSTIN: 33AAGCK3333N2ZF  Recipient GSTIN: 27AAACT0000A1ZF\nS.No  Description  HSN  Qty  Rate  Amount\n1  Rice Flour (Demo) 50kg  1102  80  2,500.00  2,00,000.00\nSub Total  2,00,000.00\nIGST @ 18%  36,000.00\nGrand Total  ₹ 2,36,000.00\nFor Kaveri Foods (Demo)\nAuthorised Signatory"
+}

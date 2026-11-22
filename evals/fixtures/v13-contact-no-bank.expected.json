@@ -1,0 +1,18 @@
+{
+  "id": "v13-contact-no-bank",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v13-contact-no-bank.txt",
+  "lang": "en",
+  "description": "Contact card without bank details; contact person is not the account holder",
+  "expected": {
+    "accountHolderName": null,
+    "accountNumber": null,
+    "ifsc": null,
+    "bankName": null,
+    "upiId": null,
+    "gstin": null,
+    "phone": "9000012345",
+    "email": "accounts@demo-supplies.in"
+  }
+}

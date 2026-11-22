@@ -1,0 +1,18 @@
+{
+  "id": "i12-buyer-gstin-only",
+  "kind": "invoice",
+  "sourceType": "image",
+  "file": "i12-buyer-gstin-only.png",
+  "lang": "en",
+  "description": "PNG, unregistered seller (Bill of Supply); only buyer GSTIN → vendor GSTIN null",
+  "expected": {
+    "vendorGstin": null,
+    "vendorName": "Meera Foods (Demo)",
+    "invoiceNumber": "MF-55",
+    "invoiceDate": "2025-03-10",
+    "dueDate": null,
+    "totalPaise": 240000,
+    "creditDays": null
+  },
+  "groundTruthText": "BILL OF SUPPLY\nMeera Foods (Demo)\nLane 3, Koregaon Park, Pune 411001\nPh: 9822001122\nBill No: MF-55\nDate: 10/03/2025\nBill To:\nOm Medical Store (Demo)\nGSTIN: 27AAEPO2222L1ZQ\nS.No  Description  HSN  Qty  Rate  Amount\n1  Snacks Box (Demo)  2106  24  100.00  2,400.00\nTotal  ₹ 2,400.00\nFor Meera Foods (Demo)\nAuthorised Signatory"
+}

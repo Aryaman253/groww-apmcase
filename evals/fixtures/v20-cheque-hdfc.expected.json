@@ -1,0 +1,19 @@
+{
+  "id": "v20-cheque-hdfc",
+  "kind": "vendor",
+  "sourceType": "image",
+  "file": "v20-cheque-hdfc.png",
+  "lang": "en",
+  "description": "Cancelled cheque (HDFC), MICR band, 'For … / Authorised Signatory'",
+  "expected": {
+    "accountHolderName": "BRIGHT STAR ENTERPRISES (DEMO)",
+    "accountNumber": "50200012345678",
+    "ifsc": "HDFC0004321",
+    "bankName": "HDFC Bank",
+    "upiId": null,
+    "gstin": null,
+    "phone": null,
+    "email": null
+  },
+  "groundTruthText": "HDFC BANK\nDate\nBranch: Demo Nagar, Pune 411001\nRTGS/NEFT IFSC: HDFC0004321\nPay  or Bearer\nRupees  ₹\nA/c No. 50200012345678\nFor BRIGHT STAR ENTERPRISES (DEMO)\nAuthorised Signatory\n\"000123\"  411240015:  004321\"  31"
+}

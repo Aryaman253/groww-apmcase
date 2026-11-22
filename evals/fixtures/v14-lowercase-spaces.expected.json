@@ -1,0 +1,18 @@
+{
+  "id": "v14-lowercase-spaces",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v14-lowercase-spaces.txt",
+  "lang": "en",
+  "description": "Lowercase, 'acc no:-', spaced account, 'name - …'",
+  "expected": {
+    "accountHolderName": "Lakshmi Agencies (Demo)",
+    "accountNumber": "01234567890123",
+    "ifsc": "CNRB0001234",
+    "bankName": "Canara Bank",
+    "upiId": null,
+    "gstin": null,
+    "phone": null,
+    "email": null
+  }
+}

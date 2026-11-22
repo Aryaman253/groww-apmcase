@@ -1,0 +1,18 @@
+{
+  "id": "v01-whatsapp-en",
+  "kind": "vendor",
+  "sourceType": "paste",
+  "file": "v01-whatsapp-en.txt",
+  "lang": "en",
+  "description": "WhatsApp, English, all labelled, emojis",
+  "expected": {
+    "accountHolderName": "Sunrise Pharma Distributors (Demo)",
+    "accountNumber": "501000012345678",
+    "ifsc": "HDFC0001234",
+    "bankName": "HDFC Bank",
+    "upiId": "sunrisedemo@okhdfcbank",
+    "gstin": "27AAKFS1234Q1ZP",
+    "phone": null,
+    "email": null
+  }
+}
