@@ -17,6 +17,9 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   const testMode = isDirectPayEnabled() && (Boolean(provider) || ctx.workspace.is_demo);
   return (
     <div className="min-h-dvh lg:grid lg:grid-cols-[15rem_1fr]">
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-background focus:px-3 focus:py-2">
+        {t("common.skipToContent")}
+      </a>
       <aside className="no-print sticky top-0 hidden h-dvh flex-col gap-6 border-r bg-bg-secondary px-3 py-5 lg:flex">
         <div className="px-3">
           <Wordmark />
@@ -24,9 +27,6 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         <SideNav />
       </aside>
       <div className="flex min-h-dvh flex-col">
-        <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-2 focus:rounded focus:bg-background focus:px-3 focus:py-2">
-          {t("common.skipToContent")}
-        </a>
         <TopBar current={ctx.workspace} workspaces={ctx.workspaces} testMode={testMode} />
         {ctx.workspace.is_demo ? <DemoBanner /> : null}
         <main id="main" className="mx-auto w-full max-w-lg flex-1 px-4 pt-4 pb-[calc(5rem+env(safe-area-inset-bottom))] lg:max-w-5xl lg:px-8 lg:pb-10">

@@ -33,7 +33,7 @@ export default async function ActivityPage({ searchParams }: { searchParams: Pro
           return (
             <li key={r.id} className="rounded-xl border bg-card p-3">
               <div className="flex items-start justify-between gap-3">
-                <p className="font-medium">{t.has(`actions.${r.action}`) ? t(`actions.${r.action}`) : r.action}</p>
+                <p className="font-medium">{t.has(`actions.${r.action.replaceAll(".", "_")}`) ? t(`actions.${r.action.replaceAll(".", "_")}`) : r.action}</p>
                 <time className="shrink-0 text-xs text-text-secondary" dateTime={r.created_at}>
                   {fmt.format(new Date(r.created_at))}
                 </time>

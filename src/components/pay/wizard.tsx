@@ -80,7 +80,10 @@ export function RunWizard({
     return groupBillsIntoPayments(chosen, vendors, { amounts: s.amounts }).map((p) => {
       const v = vendorById.get(p.vendorId)!;
       const w = paymentWarnings(v, { amountPaise: p.amountPaise, billIds: p.allocations.map((a) => a.billId) }, history, { hold: { enabled: hold24h } });
-      const warnings: PaymentWarningCode[] = w.warnings.filter((x) => x !== "NEW_PAYEE");
+      let warnings: PaymentWarningCode[] = w.warnings.filter((x) => x !== "NEW_PAYEE");
+      // One clear reason per problem: "changed" already implies "not approved".
+      if (warnings.includes("CHANGED_AWAITING_APPROVAL")) warnings = warnings.filter((x) => x !== "BANK_NOT_APPROVED" && x !== "VENDOR_NOT_VERIFIED");
+      if (warnings.includes("BANK_NOT_APPROVED")) warnings = warnings.filter((x) => x !== "VENDOR_NOT_VERIFIED");
       if (newPayees.has(v.id) && !w.excluded) warnings.push("NEW_PAYEE");
       const method: PaymentMethod | null = s.methods[v.id] ?? suggestMethod(v, { directPayAvailable });
       return { ...p, v, warnings, blocking: w.blocking, missing: w.excluded, method, removed: excluded.has(v.id) };

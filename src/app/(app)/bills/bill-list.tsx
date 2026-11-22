@@ -145,7 +145,7 @@ export function BillList({
                 <Link href={`/bills/${b.id}`} className="flex items-center gap-3 rounded-xl border bg-card p-4 hover:bg-surface-hover">
                   <div className="min-w-0 flex-1 space-y-1">
                     <p className="truncate font-medium">{b.vendorName}</p>
-                    <p className="truncate text-sm text-text-secondary">{t("invoice", { number: b.invoiceNumber })}</p>
+                    <p className="truncate text-sm text-text-secondary">{t("invoiceNo", { number: b.invoiceNumber })}</p>
                     <p className={cn("text-sm", b.tab === "overdue" ? "text-danger" : "text-text-secondary")}>
                       {b.tab === "paid"
                         ? t("paidOn", { date: formatDate((b.paidAt ?? "").slice(0, 10), locale) })

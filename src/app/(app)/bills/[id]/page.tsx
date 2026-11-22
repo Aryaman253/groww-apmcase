@@ -44,7 +44,7 @@ export default async function BillPage({ params }: { params: Promise<{ id: strin
       <section className="rounded-2xl border bg-card p-5">
         <div className="flex items-start justify-between gap-3">
           <div>
-            <p className="text-sm text-text-secondary">{t("invoice", { number: bill.invoice_number })}</p>
+            <p className="text-sm text-text-secondary">{t("invoiceNo", { number: bill.invoice_number })}</p>
             <Money paise={bill.amount_paise - (bill.status === "paid" ? 0 : bill.paid_paise)} className="text-3xl font-semibold" />
           </div>
           <StatusBadge tone={tone}>{t(`status.${tab}`)}</StatusBadge>

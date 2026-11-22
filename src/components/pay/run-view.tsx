@@ -128,7 +128,7 @@ export function RunView({
     const open = ["pending", "sent", "processing"].includes(p.status) && p.method !== "direct";
     void _l;
     return (
-      <li className="rounded-xl border bg-card p-4" data-testid="payment-row" data-vendor={p.vendorName} data-status={p.status}>
+      <li className="rounded-xl border bg-card p-4" data-testid="payment-row" data-payment-id={p.id} data-vendor={p.vendorName} data-status={p.status}>
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
             <p className="truncate font-medium">{p.vendorName}</p>
