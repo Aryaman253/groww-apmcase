@@ -21,7 +21,8 @@ test("switching to Hindi leaves no untranslated English UI strings in the main f
   await expect(page.locator("html")).toHaveAttribute("lang", "hi");
   for (const path of ["/home", "/vendors", "/bills", "/pay", "/more"]) {
     await page.goto(path);
-    await page.waitForLoadState("networkidle");
+    await page.locator("main h1, main [data-testid]").first().waitFor();
+    await page.waitForTimeout(1500);
     const text = await page.locator("body").innerText();
     const leaked = english.filter((s) => text.includes(s));
     expect(leaked, `English strings on ${path}`).toEqual([]);
