@@ -1,6 +1,6 @@
 # Auto-fill eval results
 
-- **Parser version:** `1.0.0`
+- **Parser version:** `1.0.1`
 - **Run date:** 2026-11-22
 - **Fixtures:** 40 (25 vendor-detail messages, 15 invoices; 19 pasted text, 14 images, 7 PDFs) — all synthetic, see `evals/generate-fixtures.ts`
 - **OCR:** PaddleOCR PP-OCRv5 mobile (en; + devanagari rec for `hi`) via onnxruntime-node; Tesseract.js 7 LSTM (eng/hin best_int) for comparison
@@ -21,8 +21,8 @@
 
 | Engine | Images | Field accuracy | Confident errors | OCR token recall | Mean OCR conf | Median time / image | Model load |
 |---|---|---|---|---|---|---|---|
-| paddle | 14 | 95.2% | 0 | 94.5% | 0.982 | 520 ms (max 936) | hi: 0.1s, en: 0.0s |
-| tesseract | 14 | 97.1% | 0 | 95.8% | 0.894 | 391 ms (max 631) | en: 0.3s, hi: 0.2s |
+| paddle | 14 | 95.2% | 0 | 94.5% | 0.982 | 589 ms (max 992) | hi: 0.3s, en: 0.0s |
+| tesseract | 14 | 97.1% | 0 | 95.8% | 0.894 | 451 ms (max 764) | en: 0.5s, hi: 0.3s |
 
 ## Per-field accuracy
 

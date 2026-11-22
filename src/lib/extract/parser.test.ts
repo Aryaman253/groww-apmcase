@@ -350,3 +350,19 @@ describe("helpers", () => {
     expect(t).toBe("Invoice No: 42\nTotal  11,800.00");
   });
 });
+
+describe("IFSC OCR look-alikes (browser regression)", () => {
+  it("corrects O→0 in a numeric branch code but never with high confidence", () => {
+    const r = parseVendorText("IFSC: SBIN0O12345", { ocrWordConfidence: 0.95 });
+    expect(r.ifsc.value).toBe("SBIN0012345");
+    expect(r.ifsc.confidence).toBeLessThan(0.8);
+  });
+  it("leaves clean IFSCs confident", () => {
+    const r = parseVendorText("IFSC: SBIN0012345");
+    expect(r.ifsc.value).toBe("SBIN0012345");
+    expect(r.ifsc.confidence).toBeGreaterThanOrEqual(0.8);
+  });
+  it("does not touch genuinely alphanumeric branch codes", () => {
+    expect(parseVendorText("IFSC: BARB0DEMOXX").ifsc.value).toBe("BARB0DEMOXX");
+  });
+});

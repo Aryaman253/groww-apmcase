@@ -37,7 +37,7 @@ import type {
   VendorExtraction,
 } from "./types";
 
-export const PARSER_VERSION = "1.0.0";
+export const PARSER_VERSION = "1.0.1";
 
 /** Values at or above this confidence are considered safe to pre-fill. */
 export const CONFIDENT = 0.8;
@@ -165,14 +165,31 @@ function fixGstin(raw: string): { value: string; fixed: boolean } | null {
   return null;
 }
 
+/**
+ * Branch codes are almost always digits. A mostly-numeric branch code with a
+ * digit look-alike letter (O/I/L/S/B/Z…) is an OCR slip ("SBIN0O12345"): correct
+ * it, but report it as fixed so it is never pre-filled with high confidence.
+ */
+function fixBranch(v: string): { value: string; fixed: boolean } {
+  const branch = v.slice(5);
+  const digits = (branch.match(/[0-9]/g) ?? []).length;
+  const letters = branch.replace(/[0-9]/g, "");
+  if (digits >= 4 && letters.length > 0 && [...letters].every((c) => LETTER_TO_DIGIT[c] !== undefined)) {
+    return { value: v.slice(0, 5) + branch.replace(/[A-Z]/g, (c) => LETTER_TO_DIGIT[c] ?? c), fixed: true };
+  }
+  return { value: v, fixed: false };
+}
+
 function fixIfsc(raw: string): { value: string; fixed: boolean } | null {
   const s = raw.toUpperCase();
-  if (isValidIfsc(s) && /^[A-Z]{4}0/.test(s)) return { value: s, fixed: false };
+  if (isValidIfsc(s) && /^[A-Z]{4}0/.test(s)) return fixBranch(s);
   const head = s.slice(0, 4);
   if ((head.match(/[A-Z]/g) ?? []).length < 2) return null;
   const fixedHead = head.replace(/[0-9]/g, (d) => DIGIT_TO_LETTER[d] ?? d);
-  const v = fixedHead + "0" + s.slice(5);
-  return isValidIfsc(v) ? { value: v, fixed: v !== s } : null;
+  const v0 = fixedHead + "0" + s.slice(5);
+  if (!isValidIfsc(v0)) return null;
+  const b = fixBranch(v0);
+  return { value: b.value, fixed: b.fixed || v0 !== s };
 }
 
 function nameKey(s: string): string {
@@ -548,7 +565,8 @@ function ifsc(doc: Doc): FieldResult<string> {
   const add = (value: string, line: number, labelled: boolean, fixed: boolean) => {
     const known = !!bankFromIfsc(value);
     let conf = known ? (labelled ? 0.97 : 0.92) : labelled ? 0.8 : 0.6;
-    if (fixed) conf = Math.min(conf, 0.8);
+    // An OCR-corrected IFSC is never "confident": the owner must check it.
+    if (fixed) conf = Math.min(conf, 0.7);
     cands.push({
       value,
       key: value,
