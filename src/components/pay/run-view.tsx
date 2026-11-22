@@ -363,7 +363,7 @@ function DirectPayCard({ runId, payments, provider, available }: { runId: string
       firing.current = false;
       setOpen(false);
       if (!res.ok) {
-        setError(res.error === "INSUFFICIENT_BALANCE" ? t("insufficient", { balance: formatInr(res.balancePaise ?? 0) }) : res.message ?? tc("somethingWrong"));
+        setError(res.error === "INSUFFICIENT_BALANCE" ? t("insufficient", { balance: formatInr("balancePaise" in res ? (res.balancePaise ?? 0) : 0) }) : res.message ?? tc("somethingWrong"));
       } else toast.success(t("sent"));
       router.refresh();
     });
