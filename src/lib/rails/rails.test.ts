@@ -52,7 +52,7 @@ describe("idempotent Direct pay transfer ids", () => {
   });
   it("simulated payout ids derive from the idempotency key (double taps collapse)", async () => {
     const sim = simulated();
-    const req = { idempotencyKey: "tarrow-x", referenceId: "x", amountPaise: 100, mode: "IMPS" as const, beneficiary: { ref: "b", name: "n", accountNumber: "123456789", ifsc: "HDFC0001234" }, narration: "n" };
+    const req = { idempotencyKey: "tarrow-x", referenceId: "x", amountPaise: 100, mode: "IMPS" as const, beneficiary: { ref: "b", name: "n", accountNumber: "123456789", ifsc: "ABCD0001234" }, narration: "n" };
     const [p1, p2] = await Promise.all([sim.createPayout(req), sim.createPayout(req)]);
     expect(p1.providerPayoutId).toBe(p2.providerPayoutId);
     expect(simulatedUtr("x")).toBe(simulatedUtr("x"));

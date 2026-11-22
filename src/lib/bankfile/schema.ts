@@ -64,7 +64,7 @@ export const PaymentModeRuleSchema = z.object({
   allowImps: z.boolean().default(false),
   /** IMPS upper limit (₹5,00,000 by RBI rules at time of writing). */
   impsMaxPaise: z.number().int().positive().default(5_00_000_00),
-  /** What each mode is written as in the file (e.g. ICICI-style single-letter codes). */
+  /** What each mode is written as in the file (e.g. single-letter codes). */
   modeCodes: z
     .object({
       NEFT: z.string(),
@@ -100,7 +100,7 @@ export const TextRulesSchema = z.object({
 export type TextRules = z.infer<typeof TextRulesSchema>;
 
 export const BankTemplateConfigSchema = z.object({
-  /** Stable key, e.g. "icici_placeholder". */
+  /** Stable key, e.g. "bulk_placeholder". */
   key: z.string().regex(/^[a-z0-9_]+$/),
   name: z.string().min(1),
   bankName: z.string().optional(),

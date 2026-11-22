@@ -3,23 +3,22 @@ import type { BankTemplateConfig } from "./schema";
 /**
  * Seed bank templates. These are plain JSON-serialisable objects (no functions,
  * no Dates, all defaults spelled out) so a migration can insert them verbatim
- * (`JSON.stringify(ICICI_PLACEHOLDER_TEMPLATE)`).
+ * (`JSON.stringify(BULK_PLACEHOLDER_TEMPLATE)`).
  */
 
 /**
- * PLACEHOLDER — NOT VERIFIED AGAINST ICICI.
- * A plausible ICICI Corporate Internet Banking (CIB) bulk-payment style layout.
+ * PLACEHOLDER — NOT VERIFIED AGAINST ANY BANK.
+ * A typical corporate net-banking bulk-payment style layout.
  * Column names, mode codes ("N"/"R"/"I"/"M"), lengths and allowed characters are
  * best guesses. Every business must download the latest bulk-upload template
- * from their own ICICI CIB login and adjust this config before real use.
+ * from their own bank's corporate login and adjust this config before real use.
  */
-export const ICICI_PLACEHOLDER_TEMPLATE: BankTemplateConfig = {
-  key: "icici_placeholder",
-  name: "ICICI (placeholder — verify against your bank's latest template)",
-  bankName: "ICICI Bank",
+export const BULK_PLACEHOLDER_TEMPLATE: BankTemplateConfig = {
+  key: "bulk_placeholder",
+  name: "Bank bulk upload (placeholder — verify against your bank's latest template)",
   isPlaceholder: true,
   notes:
-    "Placeholder layout modelled on a typical ICICI CIB bulk payment file. Verify column order, mode codes and limits against the template in your ICICI corporate net banking before uploading.",
+    "Placeholder layout modelled on a typical corporate net-banking bulk payment file. Verify column order, mode codes and limits against your bank's own bulk-upload template before uploading.",
   version: 1,
   fileType: "csv",
   delimiter: ",",
@@ -108,4 +107,4 @@ export const GENERIC_CSV_TEMPLATE: BankTemplateConfig = {
   newPayeesAllowed: "unknown",
 };
 
-export const SEED_BANK_TEMPLATES: readonly BankTemplateConfig[] = [ICICI_PLACEHOLDER_TEMPLATE, GENERIC_CSV_TEMPLATE];
+export const SEED_BANK_TEMPLATES: readonly BankTemplateConfig[] = [BULK_PLACEHOLDER_TEMPLATE, GENERIC_CSV_TEMPLATE];

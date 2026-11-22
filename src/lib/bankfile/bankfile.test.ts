@@ -6,7 +6,7 @@ import {
   BankFileValidationError,
   BankTemplateConfigSchema,
   GENERIC_CSV_TEMPLATE,
-  ICICI_PLACEHOLDER_TEMPLATE,
+  BULK_PLACEHOLDER_TEMPLATE,
   SEED_BANK_TEMPLATES,
   bankFileName,
   cleanBankText,
@@ -124,9 +124,9 @@ describe("templates", () => {
       expect(roundTrip).toEqual(t);
       expect(BankTemplateConfigSchema.parse(roundTrip)).toEqual(t);
     }
-    expect(ICICI_PLACEHOLDER_TEMPLATE.key).toBe("icici_placeholder");
-    expect(ICICI_PLACEHOLDER_TEMPLATE.name).toBe("ICICI (placeholder — verify against your bank's latest template)");
-    expect(ICICI_PLACEHOLDER_TEMPLATE.isPlaceholder).toBe(true);
+    expect(BULK_PLACEHOLDER_TEMPLATE.key).toBe("bulk_placeholder");
+    expect(BULK_PLACEHOLDER_TEMPLATE.name).toBe("Bank bulk upload (placeholder — verify against your bank's latest template)");
+    expect(BULK_PLACEHOLDER_TEMPLATE.isPlaceholder).toBe(true);
     expect(GENERIC_CSV_TEMPLATE.key).toBe("generic_csv");
     expect(GENERIC_CSV_TEMPLATE.name).toBe("Generic CSV");
   });
@@ -158,13 +158,13 @@ describe("helpers", () => {
     expect(cleanBankText("राम ट्रेडर्स", rules, 35).value).toBe("");
   });
   it("suggests payment mode", () => {
-    const rule = ICICI_PLACEHOLDER_TEMPLATE.paymentModeRule;
-    expect(suggestPaymentMode(100_00, "DEMO0000001", "ICIC0000001", rule)).toBe("NEFT");
-    expect(suggestPaymentMode(2_00_000_00, "DEMO0000001", "ICIC0000001", rule)).toBe("RTGS");
-    expect(suggestPaymentMode(1_99_999_99, "DEMO0000001", "ICIC0000001", rule)).toBe("NEFT");
-    expect(suggestPaymentMode(50_00_000_00, "icic0009999", "ICIC0000001", rule)).toBe("FT");
-    expect(suggestPaymentMode(100_00, "ICIC0009999", null, rule)).toBe("NEFT");
-    expect(suggestPaymentMode(100_00, "ICIC0009999", "ICIC0000001", {})).toBe("NEFT"); // no sameBankMode
+    const rule = BULK_PLACEHOLDER_TEMPLATE.paymentModeRule;
+    expect(suggestPaymentMode(100_00, "DEMO0000001", "EFGH0000001", rule)).toBe("NEFT");
+    expect(suggestPaymentMode(2_00_000_00, "DEMO0000001", "EFGH0000001", rule)).toBe("RTGS");
+    expect(suggestPaymentMode(1_99_999_99, "DEMO0000001", "EFGH0000001", rule)).toBe("NEFT");
+    expect(suggestPaymentMode(50_00_000_00, "efgh0009999", "EFGH0000001", rule)).toBe("FT");
+    expect(suggestPaymentMode(100_00, "EFGH0009999", null, rule)).toBe("NEFT");
+    expect(suggestPaymentMode(100_00, "EFGH0009999", "EFGH0000001", {})).toBe("NEFT"); // no sameBankMode
     expect(suggestPaymentMode(100_00, "X", "Y", { defaultMode: "IMPS", allowImps: true })).toBe("IMPS");
     expect(suggestPaymentMode(6_00_000_00, "X", "Y", { defaultMode: "IMPS", allowImps: true, allowRtgs: false })).toBe("NEFT");
   });
@@ -180,7 +180,7 @@ describe("helpers", () => {
 
 describe("golden files", () => {
   for (const [template, name] of [
-    [ICICI_PLACEHOLDER_TEMPLATE, "icici_placeholder.csv"],
+    [BULK_PLACEHOLDER_TEMPLATE, "bulk_placeholder.csv"],
     [GENERIC_CSV_TEMPLATE, "generic_csv.csv"],
     [PIPE_TXT_TEMPLATE, "test_pipe_txt.txt"],
   ] as const) {
@@ -195,8 +195,8 @@ describe("golden files", () => {
     });
   }
 
-  it("ICICI placeholder rows look right", () => {
-    const out = generateBankFile(fixtureInput(ICICI_PLACEHOLDER_TEMPLATE));
+  it("bulk placeholder rows look right", () => {
+    const out = generateBankFile(fixtureInput(BULK_PLACEHOLDER_TEMPLATE));
     const lines = (out.files[0].content as string).split("\r\n");
     expect(lines[0]).toBe(
       "Payment Mode,Beneficiary Name,Beneficiary Account No,IFSC,Amount,Debit Account No,Value Date,Remarks/Narration,Beneficiary Email,Beneficiary Mobile",
@@ -213,7 +213,7 @@ describe("golden files", () => {
 
 describe("validateRun", () => {
   it("passes the fixture and reports cleaning warnings", () => {
-    const v = validateRun(fixtureInput(ICICI_PLACEHOLDER_TEMPLATE));
+    const v = validateRun(fixtureInput(BULK_PLACEHOLDER_TEMPLATE));
     expect(v.ok).toBe(true);
     const codes = v.rowWarnings.map((w) => `${w.row}:${w.code}`);
     expect(codes).toContain("1:NAME_CLEANED");
@@ -227,7 +227,7 @@ describe("validateRun", () => {
     ps[0] = { ...ps[0], bankDetailsApproved: false };
     ps[1] = { ...ps[1], verified: false, ifsc: "FAKE1000009" };
     ps[2] = { ...ps[2], accountNumber: "12AB", amountPaise: 0, vendorName: "राम ट्रेडर्स" };
-    const v = validateRun(fixtureInput(ICICI_PLACEHOLDER_TEMPLATE, ps));
+    const v = validateRun(fixtureInput(BULK_PLACEHOLDER_TEMPLATE, ps));
     expect(v.ok).toBe(false);
     const codes = v.rowErrors.map((e) => `${e.row}:${e.code}`);
     expect(codes).toEqual(
@@ -241,7 +241,7 @@ describe("validateRun", () => {
       ]),
     );
     expect(v.rowErrors[0]).toMatchObject({ row: 1, vendorName: "Test Vendor Alpha & Sons", paymentId: "rp-0001" });
-    expect(() => generateBankFile(fixtureInput(ICICI_PLACEHOLDER_TEMPLATE, ps))).toThrow(BankFileValidationError);
+    expect(() => generateBankFile(fixtureInput(BULK_PLACEHOLDER_TEMPLATE, ps))).toThrow(BankFileValidationError);
   });
 
   it("requires the total to match to the paisa", () => {
@@ -330,7 +330,7 @@ describe("splitting and xlsx", () => {
   });
 
   it("writes xlsx that reads back with SheetJS, keeping leading zeros as text", () => {
-    const t: BankTemplateConfig = { ...ICICI_PLACEHOLDER_TEMPLATE, key: "icici_xlsx", fileType: "xlsx" };
+    const t: BankTemplateConfig = { ...BULK_PLACEHOLDER_TEMPLATE, key: "bulk_xlsx", fileType: "xlsx" };
     const out = generateBankFile(fixtureInput(t));
     const f = out.files[0];
     expect(f.content).toBeInstanceOf(Uint8Array);
@@ -339,7 +339,7 @@ describe("splitting and xlsx", () => {
     const wb = XLSX.read(f.content, { type: "array" });
     expect(wb.SheetNames).toEqual(["Payments"]);
     const aoa = XLSX.utils.sheet_to_json<string[]>(wb.Sheets.Payments, { header: 1, raw: true });
-    expect(aoa[0]).toEqual(ICICI_PLACEHOLDER_TEMPLATE.columns.map((c) => c.header));
+    expect(aoa[0]).toEqual(BULK_PLACEHOLDER_TEMPLATE.columns.map((c) => c.header));
     expect(aoa[1].slice(0, 7)).toEqual([
       "N",
       "Test Vendor Alpha and Sons",

@@ -34,9 +34,9 @@ export interface VendorExtraction {
   accountNumber: FieldResult<string>;
   /** Uppercase, validated format. */
   ifsc: FieldResult<string>;
-  /** Canonical bank name where known (e.g. "HDFC Bank"). */
+  /** Canonical bank name of the account being added, when the IFSC prefix is known. */
   bankName: FieldResult<string>;
-  /** Lowercase VPA, e.g. "name@okhdfcbank". */
+  /** Lowercase VPA, e.g. "name@upihandle". */
   upiId: FieldResult<string>;
   /** Uppercase, checksum-validated. */
   gstin: FieldResult<string>;

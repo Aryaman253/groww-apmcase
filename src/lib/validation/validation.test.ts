@@ -11,14 +11,14 @@ import {
 
 describe("IFSC", () => {
   it("accepts valid codes", () => {
-    expect(isValidIfsc("HDFC0001234")).toBe(true);
+    expect(isValidIfsc("ABCD0001234")).toBe(true);
     expect(isValidIfsc("sbin0000300")).toBe(true);
-    expect(isValidIfsc("ICIC0ABC123")).toBe(true);
+    expect(isValidIfsc("EFGH0ABC123")).toBe(true);
   });
   it("rejects invalid codes", () => {
-    expect(isValidIfsc("HDFC1001234")).toBe(false);
+    expect(isValidIfsc("ABCD1001234")).toBe(false);
     expect(isValidIfsc("HDF00001234")).toBe(false);
-    expect(isValidIfsc("HDFC000123")).toBe(false);
+    expect(isValidIfsc("ABCD000123")).toBe(false);
   });
 });
 
@@ -53,7 +53,7 @@ describe("GSTIN", () => {
 
 describe("UPI", () => {
   it("accepts handles", () => {
-    expect(isValidUpi("rkpharma@okicici")).toBe(true);
+    expect(isValidUpi("rkpharma@okupi")).toBe(true);
     expect(isValidUpi("9876543210@ybl")).toBe(true);
     expect(isValidUpi("shop.name-1@paytm")).toBe(true);
   });

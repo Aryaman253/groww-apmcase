@@ -1,6 +1,6 @@
 /**
  * Runs SQL against the hosted Supabase Postgres through the Management API.
- * Requires SUPABASE_ACCESS_TOKEN (or the Claude cloud proxy) and SUPABASE_PROJECT_REF.
+ * Requires SUPABASE_ACCESS_TOKEN and SUPABASE_PROJECT_REF.
  */
 const ref = process.env.SUPABASE_PROJECT_REF ?? "vcqmnxhoadgjrmuerreb";
 const token = process.env.SUPABASE_ACCESS_TOKEN ?? "proxy-injected";

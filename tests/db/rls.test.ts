@@ -25,8 +25,8 @@ d("workspace isolation (RLS)", () => {
       insert into public.workspaces (id, name, slug, created_by) values ('${wsA}','RLS A','rls-a','${A}'), ('${wsB}','RLS B','rls-b','${B}');
       insert into public.vendors (id, workspace_id, display_name, status) values ('${vA}','${wsA}','Vendor A','verified'), ('${vB}','${wsB}','Vendor B','verified');
       insert into public.vendor_bank_details (id, workspace_id, vendor_id, version, account_number_enc, account_last4, ifsc, status, approved_at)
-        values ('${bankA1}','${wsA}','${vA}',1,'v1.x.y.z','1111','HDFC0001234','approved', now()),
-               ('${bankB}','${wsB}','${vB}',1,'v1.x.y.z','2222','HDFC0001234','approved', now());
+        values ('${bankA1}','${wsA}','${vA}',1,'v1.x.y.z','1111','ABCD0001234','approved', now()),
+               ('${bankB}','${wsB}','${vB}',1,'v1.x.y.z','2222','ABCD0001234','approved', now());
       insert into public.bills (workspace_id, vendor_id, invoice_number, due_date, amount_paise) values ('${wsB}','${vB}','B-1', current_date, 10000);
       select 1;`);
     expect(r.ok, JSON.stringify(r)).toBe(true);
@@ -64,7 +64,7 @@ d("workspace isolation (RLS)", () => {
     const r = await asUser<{ status: string; vstatus: string }>(
       A,
       `insert into public.vendor_bank_details (workspace_id, vendor_id, version, account_number_enc, account_last4, ifsc, status)
-         values ('${wsA}','${vA}',0,'v1.a.b.c','9999','SBIN0000001','approved');
+         values ('${wsA}','${vA}',0,'v1.a.b.c','9999','WXYZ0000001','approved');
        select (select status from public.vendor_bank_details where vendor_id='${vA}' order by version desc limit 1) as status,
               (select status from public.vendors where id='${vA}') as vstatus;`,
     );
@@ -80,7 +80,7 @@ d("workspace isolation (RLS)", () => {
     const r = await asUser(
       A,
       `insert into public.vendor_bank_details (workspace_id, vendor_id, version, account_number_enc, account_last4, ifsc)
-         values ('${wsA}','${vA}',0,'v1.a.b.c','8888','SBIN0000001');
+         values ('${wsA}','${vA}',0,'v1.a.b.c','8888','WXYZ0000001');
        insert into public.payment_runs (id, workspace_id, run_number) values ('${randomUUID()}','${wsA}',0);
        insert into public.run_payments (workspace_id, run_id, vendor_id, bank_detail_id, amount_paise, method)
          select '${wsA}', id, '${vA}', '${bankA1}', 100, 'bank_file' from public.payment_runs where workspace_id='${wsA}' limit 1;`,
@@ -93,7 +93,7 @@ d("workspace isolation (RLS)", () => {
     const r = await asUser<{ n: number }>(
       A,
       `insert into public.vendor_bank_details (id, workspace_id, vendor_id, version, account_number_enc, account_last4, ifsc)
-         values ('${randomUUID()}','${wsA}','${vA}',0,'v1.a.b.c','7777','SBIN0000001');
+         values ('${randomUUID()}','${wsA}','${vA}',0,'v1.a.b.c','7777','WXYZ0000001');
        select public.review_bank_details((select id from public.vendor_bank_details where vendor_id='${vA}' and status='pending'), true);
        insert into public.payment_runs (workspace_id, run_number) values ('${wsA}',0);
        with p as (

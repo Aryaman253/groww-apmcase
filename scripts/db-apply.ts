@@ -5,7 +5,7 @@
  * Supabase GitHub integration sees them as already applied on merge.
  *
  * Usage: SUPABASE_ACCESS_TOKEN=... SUPABASE_PROJECT_REF=... npx tsx scripts/db-apply.ts [--dry-run]
- * (In the Claude cloud session the token is injected by the network proxy.)
+ * (A network proxy that injects the token also works: the default value is a placeholder.)
  */
 import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";

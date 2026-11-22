@@ -21,30 +21,30 @@ type V = {
 };
 
 const VENDORS: V[] = [
-  { name: "Sunrise Pharma Distributors", ifsc: "HDFC0001234", credit: 30, kind: "verified", gstinBase: "27AADCS1234A1Z" },
-  { name: "Ganga Medical Agencies", ifsc: "SBIN0004321", credit: 21, kind: "verified", upi: "gangamedical@okaxis" },
-  { name: "Shree Balaji Surgicals", ifsc: "ICIC0002468", credit: 30, kind: "verified" },
-  { name: "Apex Lifecare Traders", ifsc: "UTIB0001357", credit: 45, kind: "verified", gstinBase: "27AAJFA4321B1Z" },
-  { name: "Nilgiri Healthcare", ifsc: "KKBK0000987", credit: 30, kind: "verified" },
-  { name: "Moonlight Medicos", ifsc: "PUNB0123400", credit: 15, kind: "changed" },
-  { name: "Prakash Drug House", ifsc: "BARB0DEMOXX", credit: 30, kind: "verified", upi: "prakashdrug@ybl" },
-  { name: "Vardhman Pharma", ifsc: "HDFC0004455", credit: 30, kind: "verified" },
-  { name: "Kaveri Diagnostics Supply", ifsc: "CNRB0001122", credit: 60, kind: "verified" },
-  { name: "Lotus Wellness Distributors", ifsc: "IDIB000L001", credit: 30, kind: "verified" },
-  { name: "Himalaya Surgical Co", ifsc: "YESB0000123", credit: 30, kind: "verified" },
-  { name: "Om Sai Medical Stores", credit: 7, kind: "upionly", upi: "omsaimedical@paytm" },
+  { name: "Sunrise Pharma Distributors", ifsc: "DEMO0100037", credit: 30, kind: "verified", gstinBase: "27AADCS1234A1Z" },
+  { name: "Ganga Medical Agencies", ifsc: "DEMO0100074", credit: 21, kind: "verified", upi: "gangamedical@demoupi" },
+  { name: "Shree Balaji Surgicals", ifsc: "DEMO0100111", credit: 30, kind: "verified" },
+  { name: "Apex Lifecare Traders", ifsc: "DEMO0100148", credit: 45, kind: "verified", gstinBase: "27AAJFA4321B1Z" },
+  { name: "Nilgiri Healthcare", ifsc: "DEMO0100185", credit: 30, kind: "verified" },
+  { name: "Moonlight Medicos", ifsc: "DEMO0100222", credit: 15, kind: "changed" },
+  { name: "Prakash Drug House", ifsc: "DEMO0100259", credit: 30, kind: "verified", upi: "prakashdrug@demoupi" },
+  { name: "Vardhman Pharma", ifsc: "DEMO0100296", credit: 30, kind: "verified" },
+  { name: "Kaveri Diagnostics Supply", ifsc: "DEMO0100333", credit: 60, kind: "verified" },
+  { name: "Lotus Wellness Distributors", ifsc: "DEMO0100370", credit: 30, kind: "verified" },
+  { name: "Himalaya Surgical Co", ifsc: "DEMO0100407", credit: 30, kind: "verified" },
+  { name: "Om Sai Medical Stores", credit: 7, kind: "upionly", upi: "omsaimedical@demoupi" },
   { name: "Green Leaf Ayurveda Supply", credit: 30, kind: "missing" },
-  { name: "Mehta Pharma Agencies", ifsc: "ICIC0003579", credit: 30, kind: "verified", gstinBase: "24AAKFM5678C1Z" },
-  { name: "Riverbend Labs Supply", ifsc: "SBIN0007788", credit: 45, kind: "verified" },
-  { name: "Coastal Medisales", ifsc: "UBIN0533211", credit: 30, kind: "verified", upi: "coastalmedi@okicici" },
-  { name: "Sapphire Generics", ifsc: "HDFC0007001", credit: 30, kind: "newpayee" },
-  { name: "Unity Health Traders", ifsc: "MAHB0000456", credit: 30, kind: "verified" },
-  { name: "Deccan Bandage Works", ifsc: "UTIB0002468", credit: 30, kind: "verified", upi: "deccanbandage@ybl" },
-  { name: "Silverline Pharma", ifsc: "KKBK0001472", credit: 30, kind: "verified" },
-  { name: "Pinnacle Ortho Supplies", ifsc: "IBKL0000123", credit: 30, kind: "unreviewed" },
-  { name: "Royal Chemists Wholesale", ifsc: "ICIC0005050", credit: 15, kind: "verified", upi: "royalchemists@okhdfcbank" },
+  { name: "Mehta Pharma Agencies", ifsc: "DEMO0100444", credit: 30, kind: "verified", gstinBase: "24AAKFM5678C1Z" },
+  { name: "Riverbend Labs Supply", ifsc: "DEMO0100481", credit: 45, kind: "verified" },
+  { name: "Coastal Medisales", ifsc: "DEMO0100518", credit: 30, kind: "verified", upi: "coastalmedi@demoupi" },
+  { name: "Sapphire Generics", ifsc: "DEMO0100555", credit: 30, kind: "newpayee" },
+  { name: "Unity Health Traders", ifsc: "DEMO0100592", credit: 30, kind: "verified" },
+  { name: "Deccan Bandage Works", ifsc: "DEMO0100629", credit: 30, kind: "verified", upi: "deccanbandage@demoupi" },
+  { name: "Silverline Pharma", ifsc: "DEMO0100666", credit: 30, kind: "verified" },
+  { name: "Pinnacle Ortho Supplies", ifsc: "DEMO0100703", credit: 30, kind: "unreviewed" },
+  { name: "Royal Chemists Wholesale", ifsc: "DEMO0100740", credit: 15, kind: "verified", upi: "royalchemists@demoupi" },
   { name: "Tulsi Herbal Traders", credit: 30, kind: "missing" },
-  { name: "Evergreen Diagnostics", ifsc: "SBIN0009999", credit: 30, kind: "newpayee" },
+  { name: "Evergreen Diagnostics", ifsc: "DEMO0100777", credit: 30, kind: "newpayee" },
 ];
 
 const GSTIN_CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -103,26 +103,26 @@ async function seed(userId: string, wsId: string) {
   });
   if (wsErr) throw wsErr;
 
-  const debitIcici = randomUUID();
-  const debitHdfc = randomUUID();
+  const debitMain = randomUUID();
+  const debitSecond = randomUUID();
   const { error: daErr } = await db.from("debit_accounts").insert([
     {
-      id: debitIcici,
+      id: debitMain,
       workspace_id: wsId,
-      bank_name: "ICICI Bank",
+      bank_name: "Demo bank",
       nickname: "Main current account",
-      ifsc: "ICIC0000001",
+      ifsc: "DEMO0100814",
       account_last4: "4321",
       account_number_enc: encrypt("000105004321"),
-      bank_template_id: tplId("icici_placeholder"),
+      bank_template_id: tplId("bulk_placeholder"),
       is_default: true,
     },
     {
-      id: debitHdfc,
+      id: debitSecond,
       workspace_id: wsId,
-      bank_name: "HDFC Bank",
+      bank_name: "Demo bank",
       nickname: "Collections account",
-      ifsc: "HDFC0000001",
+      ifsc: "DEMO0100851",
       account_last4: "8765",
       account_number_enc: encrypt("50200000008765"),
       bank_template_id: tplId("generic_csv"),
@@ -164,7 +164,7 @@ async function seed(userId: string, wsId: string) {
       account_number_enc: acct ? encrypt(acct) : null,
       account_last4: acct ? last4(acct) : null,
       ifsc: acct ? v.ifsc! : null,
-      bank_name: acct ? bankName(v.ifsc!) : null,
+      bank_name: null,
       upi_id: v.upi ?? null,
       status: "approved",
       source: "demo",
@@ -263,18 +263,18 @@ async function seed(userId: string, wsId: string) {
   const sum = (xs: B[]) => xs.reduce((s, b) => s + (b.amount_paise as number), 0);
   await db.from("payment_runs").insert({
     id: run1, workspace_id: wsId, run_number: 0, status: "completed", up_to_date: addDays(today, -24),
-    debit_account_id: debitIcici, total_paise: sum(run1Bills), payment_count: run1Bills.length,
+    debit_account_id: debitMain, total_paise: sum(run1Bills), payment_count: run1Bills.length,
     confirmed_at: ago(25), confirmed_by: userId, completed_at: ago(24), created_by: userId, created_at: ago(25),
   });
   await db.from("payment_runs").insert({
     id: run2, workspace_id: wsId, run_number: 0, status: "partly_failed", up_to_date: addDays(today, -11),
-    debit_account_id: debitIcici, total_paise: sum(run2Bills), payment_count: run2Bills.length,
+    debit_account_id: debitMain, total_paise: sum(run2Bills), payment_count: run2Bills.length,
     confirmed_at: ago(12), confirmed_by: userId, completed_at: ago(11), created_by: userId, created_at: ago(12),
   });
   const draftBills = bills.filter((b) => b.status === "due" && b.vendorIdx in approvedIds && b.vendorIdx !== 5).slice(0, 5);
   await db.from("payment_runs").insert({
     id: run3, workspace_id: wsId, run_number: 0, status: "draft", up_to_date: addDays(today, 3),
-    debit_account_id: debitIcici, total_paise: sum(draftBills), payment_count: new Set(draftBills.map((b) => b.vendorIdx)).size,
+    debit_account_id: debitMain, total_paise: sum(draftBills), payment_count: new Set(draftBills.map((b) => b.vendorIdx)).size,
     draft_state: { step: "select", selectedBillIds: draftBills.map((b) => b.id) } as Json,
     created_by: userId, created_at: ago(1),
   });
@@ -317,25 +317,25 @@ async function seed(userId: string, wsId: string) {
     {
       workspace_id: wsId, vendor_id: vendorIds[moonlight], version: 2,
       account_holder_name: "MOONLIGHT MEDICOS", account_number_enc: encrypt(newAcct), account_last4: last4(newAcct),
-      ifsc: "IDFB0040101", bank_name: "IDFC First Bank", status: "pending", source: "vendor_link", created_at: ago(0.2),
+      ifsc: "DEMO0100888", bank_name: null, status: "pending", source: "vendor_link", created_at: ago(0.2),
     },
     {
       workspace_id: wsId, vendor_id: vendorIds[pinnacle], version: 1,
       account_holder_name: "PINNACLE ORTHO SUPPLIES", account_number_enc: encrypt(pinAcct), account_last4: last4(pinAcct),
-      ifsc: VENDORS[pinnacle].ifsc!, bank_name: bankName(VENDORS[pinnacle].ifsc!), status: "pending", source: "autofill", created_at: ago(2),
+      ifsc: VENDORS[pinnacle].ifsc!, bank_name: null, status: "pending", source: "autofill", created_at: ago(2),
     },
     ],
     { defaultToNull: false },
   );
   if (pendErr) throw pendErr;
 
-  // Direct pay in the demo: app's own RazorpayX test keys if configured, else the simulated test rail.
-  const useRzp = Boolean(process.env.RAZORPAYX_KEY_ID && process.env.RAZORPAYX_KEY_SECRET && process.env.RAZORPAYX_ACCOUNT_NUMBER);
+  // Direct pay in the demo uses the simulated test rail: demo accounts are fictional
+  // (fictional IFSCs, no real bank names), which real payout providers would reject.
   await db.from("payout_providers").insert({
     workspace_id: wsId,
-    provider: useRzp ? "razorpayx" : "simulated",
+    provider: "simulated",
     uses_app_demo_keys: true,
-    account_number: useRzp ? process.env.RAZORPAYX_ACCOUNT_NUMBER! : "SIMULATED-TEST",
+    account_number: "SIMULATED-TEST",
     status: "connected",
   });
 
@@ -344,18 +344,10 @@ async function seed(userId: string, wsId: string) {
     { workspace_id: wsId, actor_id: userId, action: "run.completed", entity_type: "run", entity_id: run1, details: { run_number: 1 }, created_at: ago(24) },
     { workspace_id: wsId, actor_id: userId, action: "run.confirmed", entity_type: "run", entity_id: run2, details: { run_number: 2 }, created_at: ago(12) },
     { workspace_id: wsId, actor_id: null, action: "bank_details.changed", entity_type: "vendor", entity_id: vendorIds[moonlight],
-      details: { source: "vendor_link", old_last4: last4(dummyAccount(moonlight)), new_last4: last4(newAcct), old_ifsc: VENDORS[moonlight].ifsc!, new_ifsc: "IDFB0040101" }, created_at: ago(0.2) },
+      details: { source: "vendor_link", old_last4: last4(dummyAccount(moonlight)), new_last4: last4(newAcct), old_ifsc: VENDORS[moonlight].ifsc!, new_ifsc: "DEMO0100888" }, created_at: ago(0.2) },
   ], { defaultToNull: false });
 }
 
-function bankName(ifsc: string) {
-  const map: Record<string, string> = {
-    HDFC: "HDFC Bank", SBIN: "State Bank of India", ICIC: "ICICI Bank", UTIB: "Axis Bank", KKBK: "Kotak Mahindra Bank",
-    PUNB: "Punjab National Bank", BARB: "Bank of Baroda", CNRB: "Canara Bank", IDIB: "Indian Bank", YESB: "Yes Bank",
-    UBIN: "Union Bank of India", MAHB: "Bank of Maharashtra", IBKL: "IDBI Bank", IDFB: "IDFC First Bank",
-  };
-  return map[ifsc.slice(0, 4)] ?? "Bank";
-}
 
 /** Deletes a demo workspace (cascade). Only demo workspaces. */
 export async function deleteDemoWorkspace(wsId: string) {

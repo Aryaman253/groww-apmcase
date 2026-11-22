@@ -8,7 +8,7 @@ TArrow is a phone-first web app for small businesses (pharmacies, clinics, distr
 2. **Due bills.** Bring them in from a Tally/Marg Excel or CSV export, an invoice photo or PDF, or by hand.
 3. **Review and approve.** One screen, one payment per vendor, with warnings: new payee, unusual amount, possible duplicate, blocked vendor.
 4. **Pay in one go**, three ways:
-   - a bank bulk-upload file (one login, one OTP)
+   - a bank bulk-upload file (one login, one OTP; the format is configurable per bank)
    - UPI deep links or QR codes
    - **Direct pay** through the business's own payout account (RazorpayX test mode, or the Cashfree sandbox).
 5. **Close the run.** Upload the bank's status file or enter UTRs, mark bills paid, notify vendors on WhatsApp, and export the paid list.
@@ -72,10 +72,10 @@ This records them in `supabase_migrations.schema_migrations`, so the GitHub inte
 2. Add the environment variables from `.env.example` for both Production and Preview. Set `APP_URL` to your production URL.
 3. `vercel.json` pins functions to **`bom1`** (Mumbai, next to the Supabase project) and adds the daily **keep-alive cron** (`/api/cron/keepalive`, protected by `CRON_SECRET`). That job keeps the free Supabase project from pausing and deletes demo workspaces older than 24 hours.
 4. `npm run build` runs `models:fetch` first (`prebuild`), so the OCR models are served from the app's own origin. If the download fails, the build still succeeds and the browser falls back to Hugging Face.
-5. **RazorpayX webhooks (optional).** In the RazorpayX dashboard (Test mode) → Webhooks:
+5. **RazorpayX webhooks (optional, per workspace).** In the RazorpayX dashboard (Test mode) → Webhooks:
    - add `https://<your-app>/api/webhooks/razorpayx`
    - events: `payout.processed`, `payout.failed`, `payout.reversed`, `payout.rejected`
-   - put the secret you choose in `RAZORPAYX_WEBHOOK_SECRET`.
+   - enter the same secret in TArrow under **More → Settings → Payments** when connecting.
    - Without webhooks, statuses still update by polling.
 
 ## Direct pay (test mode only)
@@ -88,7 +88,7 @@ This records them in `supabase_migrations.schema_migrations`, so the GitHub inte
   - a **simulated** test rail.
 - **Who pays:**
   - Real workspaces connect their **own** provider test account in **More → Settings → Payments**. Credentials are encrypted and kept server-side.
-  - The demo uses the app's own RazorpayX test keys when `RAZORPAYX_*` is set, otherwise the simulated rail. It's all fake money.
+  - Demo workspaces always use the **simulated** test rail: demo accounts are fictional (no real bank names or IFSCs), which real providers would reject. It's all fake money.
 - **Safety:**
   - Before the first payout to each bank-details version, TArrow runs the provider's account validation and compares names. A mismatch blocks the payout until the owner explicitly overrides it.
   - It checks the balance first.
