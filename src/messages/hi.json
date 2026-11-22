@@ -113,7 +113,7 @@
   },
   "validation": {
     "required": "यह ज़रूरी है।",
-    "ifsc": "IFSC ऐसा दिखना चाहिए: ABCD0123456 (11 अक्षर, 5वाँ शून्य)।",
+    "ifsc": "IFSC ऐसा दिखना चाहिए: BANK0123456 (11 अक्षर, 5वाँ शून्य)।",
     "ifscRequired": "इस खाते का IFSC डालें।",
     "account": "खाता संख्या 9 से 18 अंकों की होनी चाहिए।",
     "accountRequired": "इस IFSC के लिए खाता संख्या डालें।",
@@ -167,7 +167,7 @@
     "methodRequest": "विक्रेता से माँगें",
     "methodRequestHint": "भरने के लिए सुरक्षित लिंक भेजें",
     "pasteLabel": "मैसेज यहाँ पेस्ट करें",
-    "pastePlaceholder": "जैसे A/c name: Sunrise Pharma, A/c no: 50100123456789, IFSC: ABCD0123456",
+    "pastePlaceholder": "जैसे A/c name: Sunrise Pharma, A/c no: 50100123456789, IFSC: BANK0123456",
     "extract": "फ़ॉर्म भरें",
     "extracting": "पढ़ा जा रहा है…",
     "onDevice": "आपके फ़ोन पर ही पढ़ा जाता है। कुछ भी अपलोड नहीं होता।",
